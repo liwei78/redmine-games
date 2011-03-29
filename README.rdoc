@@ -1,22 +1,31 @@
 Migrate:
 
 rake redmine:load_default_data
+
 rake db:migrate_plugins
 
 Note:
 ruby script/generate redmine_plugin <plugin_name>
+
 ruby script/generate redmine_plugin_model <plugin_name> <model_name> [<fields>]
+
 ruby script/generate redmine_plugin_controller <plugin_name> <controller_name> [<actions>]
 
+
 Used Plugins:
+
 will_paginate
+
 paperclip
 
 Used Gems:
+
 environment.rb 增加
 
 config.gem 'hpricot'
+
 config.gem 'mechanize'
 
 安装gem：
+
 rake gems:install
