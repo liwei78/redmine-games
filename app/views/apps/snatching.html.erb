@@ -1,0 +1,6 @@
+<script type="text/javascript">
+  <%= remote_function(:url=>doing_app_path(@app, :project_id => params[:project_id], :app_id => params[:app_id]), :method=>:post) %>
+</script>
+<div id="snatch_notice">
+<%= l(:snatching_app_detail) %> <%= image_tag("loading.gif") %>
+</div>

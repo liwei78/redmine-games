@@ -1,0 +1,17 @@
+<% content_for :sidebar do %>
+  <h3><%= l(:label_platform_list) %></h3>
+  <ul class="platforms_list">
+    <li>
+      <%= link_to "#{l(:label_all)}", :controller => "apps", :action => "all", :project_id => @project %>
+      <span>(<%= App.count %>)</span>
+    </li>
+    <% cache("sider_platforms_list") do %>
+      <% for platform in Platform.all(:order => "position ASC") %>
+        <li>
+          <%= link_to platform.name, :controller => "apps", :action => "all", :project_id => @project, :p => platform %>
+          <span>(<%= platform.apps.count %>)</span>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>

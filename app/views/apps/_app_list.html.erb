@@ -1,0 +1,13 @@
+<ul class="apps_list <%= style_class %>">
+  <% for app in apps %>
+    <li>
+      <div class="app_icon icon57 center">
+        <%= link_to image_tag(app.icon.url, :width => "57"), :action => "show", :id => app.id, :project_id => @project %>
+        <%= link_to image_tag("/images/mask57.png", :class => "mask"), :action => "show", :id => app.id, :project_id => @project if app.icon_style == 0 %>
+      </div>
+      <div class="app_title"><%= link_to app.title, :action => "show", :id => app.id, :project_id => @project %></div>
+      <div class="app_platform"><%=  %></div>
+    </li>
+  <% end %>
+  <div class="clearfix"></div>
+</ul>

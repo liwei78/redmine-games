@@ -1,0 +1,15 @@
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'app', :plugin => 'redmine_games' %>
+  <%= javascript_include_tag 'app', :plugin => 'redmine_games' %>
+<% end %>
+
+<h2><%=l(:label_app_new)%></h2>
+
+<% labelled_tabular_form_for :app, @app, :url => {:controller => 'apps', :action => 'create'},
+  :html => {:multipart => true, :id => 'issue-form', :class => 'tabular new-issue-form'} do |f| %>
+  <%= error_messages_for 'app' %>
+  <div class="box app_form">
+    <%= render :partial => 'apps/form', :locals => {:f => f} %>
+  </div>
+  
+<% end %>

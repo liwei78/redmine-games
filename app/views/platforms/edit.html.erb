@@ -1,0 +1,6 @@
+<h2><%= l(:label_platform) %></h2>
+
+<% labelled_tabular_form_for :platform, @platform, :url => {:action => 'edit', :id => @platform} do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+  <%= submit_tag l(:button_update) %>
+<% end %>

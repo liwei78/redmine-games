@@ -1,0 +1,9 @@
+<%= error_messages_for 'platform' %>
+
+<!--[form:board]-->
+<div class="box">
+<p><%= f.text_field :name, :required => true %></p>
+<p><%= f.text_field :input_type %></p>
+<p><%= f.select :snatch_detail, [false, true] %></p>
+</div>
+<!--[eoform:board]-->

@@ -1,0 +1,109 @@
+html > body #content {
+  min-height: 100px !important;
+}
+
+div.app_nav {}
+div.app_nav .management a {
+  margin-right: 6px;
+}
+
+div.clearfix {
+  clear: both;
+}
+div.right {
+  float: right;
+}
+div.center {
+  margin: 0 auto;
+}
+div.text-right {
+  text-align: right;
+}
+div.small {
+  font-size: 12px;
+}
+
+div.app_form {}
+span.word {
+  width: 100px;
+  display: block;
+}
+
+div.form_actions {}
+div.form_actions a {}
+
+ul.apps_list {}
+ul.recommend_list {
+  height: 200px !important;
+}
+ul.apps_list li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 120px;
+  height: 100px;
+  float: left;
+  text-align: center;
+  margin-right: 10px;
+}
+ul.apps_list li div.app_icon {}
+ul.apps_list li div.app_icon img {
+  width: 57px;
+  height: 57px;
+}
+ul.apps_list li div.app_title {
+  line-height: 24px;
+  height: 24px;
+  overflow: hidden;
+}
+ul.apps_list li div.app_platform {
+  color: #666666;
+}
+
+ul.platforms_list {
+  padding: 0;
+}
+ul.platforms_list li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  line-height: 20px;
+  height: 20px;
+}
+ul.platforms_list li span {
+  color: #666;
+}
+
+div.app_show {}
+div.app_show .screenshots a {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+div.app_show h2 {
+  border: none !important;
+}
+div.app_icon {
+  position: relative;
+}
+div.icon120 {
+  width: 120px;
+}
+div.icon57 {
+  width: 57px;
+}
+div.app_icon img.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+div.screenshots {}
+div.screenshots ul {}
+div.screenshots ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  float: left;
+  width: 120px;
+  margin-right: 10px;
+}

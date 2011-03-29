@@ -1,0 +1,68 @@
+# modify by liwei 2011-2-26
+zh:
+  menu_games: 游戏
+  label_platform: 系统平台
+  label_screenshots: 截图
+  label_platform_new: 新系统平台
+  label_platform_list: 系统平台
+  label_app_new: 关于我的游戏
+
+  label_add_my_game: 添加我的游戏
+  label_add_more_screenshots: 添加更多截图
+  label_next: 下一步
+  label_more: 更多
+  label_all: 全部
+  label_index: 首页
+  label_edit: 编辑
+  label_delete: 删除
+  label_recommend: 推荐
+  label_unrecommend: 取消推荐
+  label_description: 描述
+  label_screenshots: 截图
+  label_author: 作者
+  label_last_updated: 最近更新
+  label_snatch: 抓取信息
+
+  label_pre_page: 上一页
+  label_next_page: 下一页
+
+  label_contect_title: Contact me if there's any business chance with my games!
+  label_contect_intro: cocos2d-x may hace cooperation with mobile OS providers, gaming social network servers and handset manufactories. They may pay the NRE and ask you to port your game. Leave the contact method so that we can tell you the business chance, helping increase your income.
+
+  label_send_gift: Send me the mug for free!
+  label_gift_intro: The sponsers/partners of cocos2d-x would like to donate for our growth, and prepare gifts for all of us, such as a mug printed with cocos2d logo. The Name/Address/Zipcode make us can send the gift to you.
+
+  # form field
+  field_position: 排名
+  field_store_url: 应用地址
+  field_icon: icon
+  field_desc: 描述
+  field_im: Gtalk/MSN/QQ
+  field_website: 网站/博客
+  field_miniblog: twitter/微博
+  field_phone: 电话
+  field_author: 作者
+  field_address: 地址
+  field_zip_code: 邮编
+  field_input_type: 输入类型
+  field_snatch_detail: 抓取APP介绍
+  field_icon_style: 图标风格
+  button_go_next: 下一步
+  button_go_prev: 上一步
+  button_commit: 确认
+
+  notice_not_admin: 无管理员权限
+  notice_not_onwer: 不是该APP所有者
+
+  app_title_id_blank: 应用标题不能为空
+  app_icon_id_blank:  应用icon不能为空
+  app_im_blank:  作者IM不能为空
+
+  mail_new_app: 一个新APP
+  snatching_app_detail: 资料同步中...
+  manual_input: 手动录入
+  auto_sync: 自动同步
+  view_it: 查看
+  label_author_contract: 作者联系方式
+  icon_style_apple: 苹果应用风格
+  icon_style_other: 其他风格

@@ -1,0 +1,28 @@
+<% if @platforms.any? %>
+  <table class="list">
+    <thead><tr>
+        <th><%= l(:label_platform) %></th>
+        <th></th>
+        <th></th>
+      </tr></thead>
+    <tbody>
+      <% @platforms.each do |platform|
+        next if platform.new_record? %>
+        <tr class="<%= cycle 'odd', 'even' %>">
+          <td><%=h platform.name %></td>
+          <td align="center">
+            <%= reorder_links('platform', {:controller => 'platforms', :action => 'edit', :id => platform}) %>
+          </td>
+          <td class="buttons">
+            <%= link_to l(:button_edit), {:controller => 'platforms', :action => 'edit', :id => platform}, :class => 'icon icon-edit' %>
+            <%= link_to l(:button_delete), {:controller => 'platforms', :action => 'destroy', :id => platform}, :confirm => l(:text_are_you_sure), :method => :post, :class => 'icon icon-del' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% end %>
+
+<p><%= link_to l(:label_platform_new), {:controller => 'platforms', :action => 'new'} %></p>

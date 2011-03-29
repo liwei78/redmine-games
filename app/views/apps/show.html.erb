@@ -1,0 +1,136 @@
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'app', :plugin => 'redmine_games' %>
+<% end %>
+
+<div class="app_nav">
+  <div class="right management">
+    <%= link_to "#{l(:label_edit)}", :action => "edit", :id => @app.id, :project_id => @project if has_right(@app) %>
+    <%= link_to "#{l(:label_delete)}", {:controller => "apps", :action => "destroy", :id => @app.id, :project_id => @project}, :confirm => l(:text_are_you_sure), :method => :delete if has_right(@app) %>
+    <%= link_to "#{@app.top? ? l(:label_unrecommend) : l(:label_recommend)}", {:action => "recommend", :id => @app.id, :project_id => @project}, :confirm => l(:text_are_you_sure), :method => :post if User.current.admin? %>
+  </div>
+  <%= link_to "#{l(:label_index)}", :action => "index", :project_id => @project %>
+  &gt;
+  <%= @app.title %>
+</div>
+<br />
+
+<% cache("app_cache_#{@app.id}") do %>
+  <div class="app_show">
+    <div class="right">
+      <div class="app_icon icon120">
+        <%= image_tag @app.icon.url, :width => "120" %>
+        <%= image_tag("/images/mask120.png", :class => "mask") if @app.icon_style == 0 %>
+      </div>
+    </div>
+
+    <h2><%= @app.title %></h2>
+    <div>
+      <%= l(:label_author) %>
+      :
+      <%= link_to @user.name, "/users/#{@app.user_id}" %>
+    </div>
+    <div>
+      <%= l(:label_last_updated) %>
+      :
+      <%= @app.updated_at.strftime("%Y-%m-%d") %>
+    </div>
+    <br />
+    <br />
+    <h2><%= l(:label_platform) %></h2>
+    <div>
+      <table width="200">
+        <% for ap in @app.app_platforms %>
+          <tr>
+            <td width="60"><%= ap.platform.name %></td>
+            <td>
+              <% if ap.platform.snatch_detail %>
+                <%= link_to "Link to store", AppSnatcher.base_url + ap.store_url, :target => "_blank" %>
+              <% else %>
+                <%= link_to "Link to store", ap.store_url, :target => "_blank" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <br />
+    <br />
+    <h2><%= l(:label_description) %></h2>
+    <div>
+      <%= simple_format @app.desc %>
+    </div>
+    <br />
+    <br />
+    <h2><%= l(:label_screenshots) %></h2>
+    <div class="screenshots">
+      <% for pic in @screenshots %>
+        <%= link_to image_tag(pic.file.url(:small)), pic.file.url, :target => "_blank" %>
+      <% end %>
+    </div>
+    <% if User.current.admin? %>
+      <br />
+      <br />
+      <h2><%= l(:label_author_contract) %></h2>
+      <table cellpadding="2" cellspacing="2">
+        <tr>
+          <td width="20%">
+            <%= l(:field_author) %>
+          </td>
+          <td>
+            <%= @app.author %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= l(:field_phone) %>
+          </td>
+          <td>
+            <%= @app.phone %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= l(:field_address) %>
+          </td>
+          <td>
+            <%= @app.address %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= l(:field_zip_code) %>
+          </td>
+          <td>
+            <%= @app.zip_code %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= l(:field_im) %>
+          </td>
+          <td>
+            <%= @app.im %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= l(:field_website) %>
+          </td>
+          <td>
+            <%= @app.website %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= l(:field_miniblog) %>
+          </td>
+          <td>
+            <%= @app.miniblog %>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+<% end %>
+<br />
+<%= render :partial => 'apps/sider' %>

@@ -1,0 +1,68 @@
+# modify by liwei 2011-2-26
+en:
+  menu_games: Games
+  label_platform: Platform
+  label_screenshots: Screenshots
+  label_platform_new: New Platform
+  label_platform_list: Platforms
+  label_app_new: About My Game
+
+  label_add_my_game: Add My Game !
+  label_add_more_screenshots: Add more screenshots
+  label_next: Next
+  label_more: More
+  label_all: All
+  label_index: Index
+  label_edit: Edit
+  label_delete: Delete
+  label_recommend: Recommend
+  label_unrecommend: un-Recommend
+  label_description: Description
+  label_screenshots: Screenshots
+  label_author: Author Name
+  label_last_updated: Last Updated
+  label_snatch: Snatch Detail
+
+  label_pre_page: Pre
+  label_next_page: Next
+
+  label_contect_title: Contact me if there's any business chance with my games!
+  label_contect_intro: cocos2d-x may hace cooperation with mobile OS providers, gaming social network servers and handset manufactories. They may pay the NRE and ask you to port your game. Leave the contact method so that we can tell you the business chance, helping increase your income.
+
+  label_send_gift: Send me the mug for free!
+  label_gift_intro: The sponsers/partners of cocos2d-x would like to donate for our growth, and prepare gifts for all of us, such as a mug printed with cocos2d logo. The Name/Address/Zipcode make us can send the gift to you.
+
+  # form field
+  field_position: Position
+  field_store_url: store url
+  field_icon: icon
+  field_desc: Description
+  field_im: Gtalk/MSN/QQ
+  field_website: website/blog
+  field_miniblog: twitter/micro blog
+  field_phone: Phone
+  field_author: Author Name
+  field_address: Address
+  field_zip_code: Zip Code
+  field_input_type: Input Type
+  field_snatch_detail: Snatch APP Detail
+  field_icon_style: Icon Style
+  button_go_next: Next
+  button_go_prev: Prev
+  button_commit: Commit
+
+  notice_not_admin: No admin rights.
+  notice_not_onwer: Not owner of the app.
+
+  app_title_id_blank: App title can not be blank.
+  app_icon_id_blank:  App icon can not be blank.
+  app_im_blank:  Author IM can not be blank.
+
+  mail_new_app: New APP
+  snatching_app_detail: Snatching APP detail.
+  manual_input: Manual Input
+  auto_sync: Auto Sync
+  view_it: View it
+  label_author_contract: Author Contract
+  icon_style_apple: Apple Style
+  icon_style_other: Other Style

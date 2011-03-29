@@ -1,0 +1,13 @@
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'app', :plugin => 'redmine_games' %>
+<% end %>
+<div>
+  
+</div>
+<br />
+<br />
+<%= render :partial => 'apps/app_list', :locals => {:apps => @apps, :style_class => ""} %>
+<br />
+<%= will_paginate @apps, :param_name => "page", :previous_label => l(:label_pre_page), :next_label => l(:label_next_page) %>
+<br />
+<%= render :partial => 'apps/sider' %>

@@ -1,0 +1,169 @@
+<%= hidden_field_tag :project_id, params[:project_id] %>
+
+
+<div id="step_one">
+  <h2>1/2</h2>
+  <p>
+    <%= f.text_field :title, :required => true %>
+  </p>
+  <p>
+    <%= f.select :icon_style, [[l(:icon_style_apple), 0], [l(:icon_style_other), 1]] %>
+  </p>
+  <p>
+    <label><%= l(:label_platform) %></label>
+    <div style="width: 700px; margin-left: 180px;">
+      <table>
+        <% for p in Platform.all(:order => "position asc") %>
+          <%= hidden_field_tag "platforms[#{p.id}][snatch]", p.snatch_detail %>
+          <tr>
+            <td width="5%"><%= check_box_tag "platforms[#{p.id}][id]", p.id, @app.in_platform?(p.id) %></td>
+            <td width="20%"><%= p.name %></td>
+            <td width="25%"><%= p.input_type %></td>
+            <td width="35%"><%= text_field_tag "platforms[#{p.id}][store_url]", @app.platform_store_url(p.id), :size => 40 %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </p>
+
+  <br />
+  <p><%= check_box_tag "manual_input", "true" %> <%= l(:manual_input) %></p>
+  <br />
+
+  <div id="input_detail" style="display: none;">
+    <% unless @app.new_record? %>
+      <p style="position: relative;">
+        <%= image_tag @app.icon.url, :width => "120" %>
+        <%= image_tag("/images/mask120.png", :class => "mask", :style => "position: absolute; top: 5px; left: 180px;") %>
+      </p>
+    <% end %>
+    <p>
+      <%= f.file_field :icon, :required => true %>
+    </p>
+    <p>
+      <label><%= l(:label_screenshots) %></label>
+      <%= file_field_tag "file[data][]", :size => 30 %><br />
+      <%= file_field_tag "file[data][]", :size => 30 %><br />
+      <%= file_field_tag "file[data][]", :size => 30 %><br />
+      <%= file_field_tag "file[data][]", :size => 30 %><br />
+      <%= file_field_tag "file[data][]", :size => 30 %><br />
+      <%= file_field_tag "file[data][]", :size => 30 %><br />
+    </p>
+    <% unless @app.new_record? %>
+      <p>
+      <div class="screenshots" style="width: 700px; margin-left: 180px;">
+        <ul>
+          <% for pic in @app.screenshots %>
+            <li>
+              <%= link_to image_tag(pic.file.url(:small)), pic.file.url, :target => "_blank" %>
+              <br />
+              <%= link_to "[x]", {:action => "delete_pic", :id => @app.id, :pid => pic.id, :project_id => @project}, :confirm => l(:text_are_you_sure), :method => :post %>
+            </li>
+          <% end %>
+          <div class="clearfix"></div>
+        </ul>
+      </div>
+      </p>
+    <% end %>
+    <p>
+      <%= f.text_area :desc, :required => true, :cols => 80, :rows => 10 %>
+
+    </p>
+  </div>
+
+</div>
+
+
+<div id="step_two" style="display: none;">
+  <h2>1/2</h2>
+  <h3><%= l(:label_contect_title) %></h3>
+  <p><%= l(:label_contect_intro) %></p>
+
+  <p>
+    <%= f.text_field :im, :required => true %>
+  </p>
+  <p>
+    <%= f.text_field :website %>
+  </p>
+  <p>
+    <%= f.text_field :miniblog %>
+  </p>
+
+  <br />
+  <br />
+
+  <h3><%= l(:label_send_gift) %></h3>
+  <p><%= l(:label_gift_intro) %></p>
+  <% if File.exist?(File.join(RAILS_ROOT, "public", "images", "cocos2d_gift.jpg")) %>
+    <p><%= link_to image_tag("cocos2d_gift.jpg", :width => "120"), "/images/cocos2d_gift.jpg", :target => "_blank" %></p>
+  <% end %>
+
+  <p>
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.text_field :author %>
+  </p>
+  <p>
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.text_field :zip_code %>
+  </p>
+
+</div>
+
+
+<div class="form_actions">
+  <a href="javascript:void(0);" id="go_next"><%= l(:button_go_next) %></a>
+  <a href="javascript:void(0);" id="go_prev" style="display: none;"><%= l(:button_go_prev) %></a>
+  <span id="form_btn" style="display: none;">
+    <% if @app.new_record? %>
+      <%= submit_tag l(:button_create), :id => "submit_btn" %>
+    <% else %>
+      <%= submit_tag l(:button_save), :id => "submit_btn" %>
+    <% end %>
+  </span>
+</div>
+
+
+<script type="text/javascript">
+  $('go_next').observe('click', function(event){
+
+    if ($('app_title').value == '') {
+      alert("<%= l(:app_title_id_blank) %>");
+      return false;
+    }
+
+    $('step_one').hide();
+    $('step_two').show();
+    $('go_next').hide();
+    $('go_prev').show();
+    $('form_btn').show();
+  });
+
+  $('go_prev').observe('click', function(event){
+    $('step_one').show();
+    $('step_two').hide();
+    $('go_next').show();
+    $('go_prev').hide();
+    $('form_btn').hide();
+  });
+
+  $('issue-form').observe('submit', function(event){
+    if ($('app_im').value == '') {
+      alert("<%= l(:app_im_blank) %>");
+      Event.stop(event);
+      return false;
+    }
+  });
+
+  $('manual_input').observe('click', function(event){
+    if ($(this).checked) {
+      $('input_detail').show();
+    }else{
+      $('input_detail').hide();
+    }
+  });
+  
+</script>
