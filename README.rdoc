@@ -1,9 +1,9 @@
-== Migrate:
+== Migrate Redmine db:
 
 rake redmine:load_default_data
 rake db:migrate_plugins
 
-== Note:
+== Plugin develop:
 ruby script/generate redmine_plugin <plugin_name>
 ruby script/generate redmine_plugin_model <plugin_name> <model_name> [<fields>]
 ruby script/generate redmine_plugin_controller <plugin_name> <controller_name> [<actions>]
@@ -26,3 +26,6 @@ rake gems:install
   lightbox on screenshots
 0.0.1
   ...
+  
+== Usage
+  copy assets/images/lightbox/* to public/images/lightbox/
