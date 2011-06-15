@@ -21,7 +21,8 @@ class App < ActiveRecord::Base
     find(
       :all,
       :conditions => ["top = ?", true],
-      :limit => n)
+      :limit => n,
+      :order => "updated_at desc")
   end
 
   def self.last_updated(n=12)
