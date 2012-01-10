@@ -2,6 +2,7 @@
 en:
   menu_games: Games
   label_platform: Platform
+  label_country: Country
   label_screenshots: Screenshots
   label_platform_new: New Platform
   label_platform_list: Platforms
@@ -47,6 +48,7 @@ en:
   field_input_type: Input Type
   field_snatch_detail: Snatch APP Detail
   field_icon_style: Icon Style
+  field_country: Country
   button_go_next: Next
   button_go_prev: Prev
   button_commit: Commit

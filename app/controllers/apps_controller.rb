@@ -56,7 +56,7 @@ class AppsController < ApplicationController
       platforms = params[:platforms]
       go_snatch, app_id = @app.update_platforms(platforms)
 
-      AppMailer.deliver_new_app(@app, @project.id)
+      # AppMailer.deliver_new_app(@app, @project.id)
 
       if params[:manual_input] != "true" and go_snatch
         redirect_to :action => 'snatching', :id => @app.id, :project_id => @project, :app_id => app_id

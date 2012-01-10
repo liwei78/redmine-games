@@ -10,6 +10,9 @@
     <%= f.select :icon_style, [[l(:icon_style_apple), 0], [l(:icon_style_other), 1]] %>
   </p>
   <p>
+    <%= f.select :country, [["USA", "US"], ["China", "CN"], ["Korea", "KR"], ["Russia", "RU"], ["Japan", "JP"], ["France", "FR"], ["Germany", "DE"], ["Hong Kong", "HK"], ["Italy", "IT"], ["Netherlands", "NL"], ["Portugal", "PT"], ["Spain", "ES"], ["Taiwan", "TW"], ["UK", "GB"]] %>
+  </p>
+  <p>
     <label><%= l(:label_platform) %></label>
     <div style="width: 700px; margin-left: 180px;">
       <table>

@@ -2,6 +2,7 @@
 zh:
   menu_games: 游戏
   label_platform: 系统平台
+  label_countru: 国家或地区
   label_screenshots: 截图
   label_platform_new: 新系统平台
   label_platform_list: 系统平台
@@ -47,6 +48,7 @@ zh:
   field_input_type: 输入类型
   field_snatch_detail: 抓取APP介绍
   field_icon_style: 图标风格
+  field_country: 国家或地区
   button_go_next: 下一步
   button_go_prev: 上一步
   button_commit: 确认

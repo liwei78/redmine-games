@@ -1,8 +1,9 @@
 require 'open-uri'
 
 class AppSnatcher
-  # @@base_url = "http://itunes.apple.com/app/"
-  @@base_url = "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id="
+  # @@base_url = "http://itunes.apple.com/cn/app/id"
+  # http://itunes.apple.com/cn/app/id477078317
+  # @@base_url = "http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id="
 
   def self.base_url
     @@base_url
@@ -13,23 +14,25 @@ class AppSnatcher
   def self.snatch_detail(app, app_id="")
     raise "app_id can not be blank !" if app_id.blank?
     
-    target_url = @@base_url + app_id
+    target_url = "http://itunes.apple.com/#{app.country}/app/id#{app_id}"
     agent = Mechanize.new
     agent.user_agent_alias = "Mac Safari"
     page = agent.get(target_url)
-
+    
     desc = (page/"div.product-review > p").inner_html
     app.desc = desc
-
+    
     remote_icon = (page/"div#left-stack > div")[0].at('img')["src"]
     app.photo_remote_url = remote_icon
-
+  
     pics_div = (page/"div.lockup")
     unless pics_div.blank?
-      app.screenshots.destroy_all
-      for pic in pics_div
-        alts = pic.at('img')["alt"].split(' ')
-        Screenshot.create(:photo_remote_url => pic.at('img')["src"], :app_id => app.id) if alts.include?("Screenshot")
+      begin
+        app.screenshots.destroy_all
+        for pic in pics_div
+          alts = pic.at('img')["alt"].split(' ')
+          Screenshot.create(:photo_remote_url => pic.at('img')["src"], :app_id => app.id) if alts.include?("Screenshot")
+        end
       end
     end
     

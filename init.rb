@@ -1,10 +1,12 @@
+# 0.0.2 auto snatch apps from url
+# 0.1.2 snatch app from select country and app itunes url
 require 'redmine'
 
 Redmine::Plugin.register :redmine_games do
   name 'Redmine Games plugin'
   author 'Riquel Li'
   description 'This is a plugin for Redmine to upload your app games'
-  version '0.0.2'
+  version '0.1.2'
   url 'http://railser.cn'
   author_url 'http://railser.cn/me'
 
