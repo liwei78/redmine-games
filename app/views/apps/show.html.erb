@@ -49,7 +49,7 @@
             <td width="60"><%= ap.platform.name %></td>
             <td>
               <% if ap.platform.snatch_detail %>
-                <%= link_to "Link to store", "http://itunes.apple.com/#{@app.country}/app/id#{@app.app_id}", :target => "_blank" %>
+                <%= link_to "Link to store", "http://itunes.apple.com/#{@app.country}/app/id#{ap.store_url}", :target => "_blank" %>
               <% else %>
                 <%= link_to "Link to store", ap.store_url, :target => "_blank" %>
               <% end %>

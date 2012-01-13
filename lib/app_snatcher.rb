@@ -25,14 +25,13 @@ class AppSnatcher
     remote_icon = (page/"div#left-stack > div")[0].at('img')["src"]
     app.photo_remote_url = remote_icon
   
-    pics_div = (page/"div.lockup")
+    # 2012-1-13 liwei fix screenshots
+    pics_div = (page/"div.iphone-screen-shots > div > div.lockup")
     unless pics_div.blank?
-      begin
-        app.screenshots.destroy_all
-        for pic in pics_div
-          alts = pic.at('img')["alt"].split(' ')
-          Screenshot.create(:photo_remote_url => pic.at('img')["src"], :app_id => app.id) if alts.include?("Screenshot")
-        end
+      app.screenshots.destroy_all
+      for pic in pics_div
+        # alts = pic.at('img')["alt"].split(' ') if pic.at('img')["alt"]
+        Screenshot.create(:photo_remote_url => pic.at('img')["src"], :app_id => app.id) # if (alts and alts.include?("Screenshot"))
       end
     end
     
