@@ -3,26 +3,34 @@
 <% end %>
 <%= render :partial => 'apps/sider' %>
 <div>
-  <%= link_to "#{l(:label_add_my_game)}", :controller => "apps", :action => "new", :project_id => @project %>
-</div>
-<br />
-<br />
-<h2>
-  <div class="right small">
-    <%= link_to "#{l(:label_more)}", {:controller => "apps", :action => "all", :type => "recommend", :project_id => @project} %>
-  </div>
-  <%= l(:label_recommend) %>
-</h2>
-<br />
-<%= render :partial => 'apps/app_list', :locals => {:apps => @recommends, :style_class => "recommend_list"} %>
-<br />
+  <table border="0" cellspacing="5" cellpadding="5" width="100%">
+    <tr>
+      <td>
+        <div>
+          <%= link_to "#{l(:label_add_my_game)}", :controller => "apps", :action => "new", :project_id => @project %>
+        </div>
+        <br />
+        <br />
+        <h2>
+          <div class="right small">
+            <%= link_to "#{l(:label_more)}", {:controller => "apps", :action => "all", :type => "recommend", :project_id => @project} %>
+          </div>
+          <%= l(:label_recommend) %>
+        </h2>
+        <br />
+        <%= render :partial => 'apps/app_list', :locals => {:apps => @recommends, :style_class => "recommend_list"} %>
+        <br />
 
-<h2>
-  <div class="right small">
-    <%= link_to "#{l(:label_more)}", {:controller => "apps", :action => "all", :project_id => @project} %>
-  </div>
-  <%= l(:label_last_updated) %>
-</h2>
-<br />
-<%= render :partial => 'apps/app_list', :locals => {:apps => @updateds, :style_class => ""} %>
-<br />
+        <h2>
+          <div class="right small">
+            <%= link_to "#{l(:label_more)}", {:controller => "apps", :action => "all", :project_id => @project} %>
+          </div>
+          <%= l(:label_last_updated) %>
+        </h2>
+        <br />
+        <%= render :partial => 'apps/app_list', :locals => {:apps => @updateds, :style_class => ""} %>
+        <br />
+      </td>
+    </tr>
+  </table>
+</div>
