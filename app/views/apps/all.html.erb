@@ -1,9 +1,9 @@
 <% content_for :header_tags do %>
   <%= stylesheet_link_tag 'app', :plugin => 'redmine_games' %>
 <% end %>
-<div>
-  
-</div>
+<h2>
+  <%= l(:label_assets) %>
+</h2>
 <br />
 <br />
 <%= render :partial => 'apps/app_list', :locals => {:apps => @apps, :style_class => ""} %>

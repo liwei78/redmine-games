@@ -19,6 +19,8 @@ class CreateApps < ActiveRecord::Migration
       t.string   :icon_content_type
       t.integer  :icon_file_size
       t.datetime :icon_updated_at
+      t.integer  :icon_style, :default => 0
+      t.string   :country, :default => "en"
       t.timestamps
     end
   end

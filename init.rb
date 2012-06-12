@@ -2,6 +2,7 @@
 # 0.0.2 auto snatch apps from url
 # 0.1.2 snatch app from select country and app itunes url
 # 0.1.3 fix screenshot div in diff country store
+# 0.1.4 add "Indea" to country select
 require 'redmine'
 
 Redmine::Plugin.register :redmine_games do

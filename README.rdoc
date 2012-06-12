@@ -1,54 +1,7 @@
-== Migrate Redmine db:
+redmine games plugin
 
-rake redmine:load_default_data
-
-rake db:migrate_plugins
-
-== Plugin develop:
-ruby script/generate redmine_plugin <plugin_name>
-
-ruby script/generate redmine_plugin_model <plugin_name> <model_name> [<fields>]
-
-ruby script/generate redmine_plugin_controller <plugin_name> <controller_name> [<actions>]
-
-<<<<<<< HEAD
-== Used Plugins:
-=======
-
-Used Plugins:
-
->>>>>>> 5063eee777089e90dcbb9905170dede55c2a9dbe
-will_paginate
-
-paperclip
-
-<<<<<<< HEAD
-== Used Gems:
-edit environment.rb
-=======
-Used Gems:
-
-environment.rb 增加
->>>>>>> 5063eee777089e90dcbb9905170dede55c2a9dbe
-
-config.gem 'hpricot'
-
-config.gem 'mechanize'
-
-<<<<<<< HEAD
-== install gems:
-rake gems:install
-
-== log
-0.0.2
-  lightbox on screenshots
-0.0.1
-  ...
-  
-== Usage
-  copy assets/images/lightbox/* to public/images/lightbox/
-=======
-安装gem：
-
-rake gems:install
->>>>>>> 5063eee777089e90dcbb9905170dede55c2a9dbe
+# 0。0。1 snatch apps
+# 0.0.2 auto snatch apps from url
+# 0.1.2 snatch app from select country and app itunes url
+# 0.1.3 fix screenshot div in diff country store
+# 0.1.4 add "Indea" to country select
