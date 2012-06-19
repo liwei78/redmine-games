@@ -9,3 +9,5 @@ redmine games plugin
 # 0.1.3 fix screenshot div in diff country store
 
 # 0.1.4 add "Indea" to country select
+
+# 0.1.5 add "jiathis" code to app's view
