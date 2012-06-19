@@ -11,7 +11,7 @@
   <div class="right management">
     <%= link_to "#{l(:label_edit)}", :action => "edit", :id => @app.id, :project_id => @project if has_right(@app) %>
     <%= link_to "#{l(:label_delete)}", {:controller => "apps", :action => "destroy", :id => @app.id, :project_id => @project}, :confirm => l(:text_are_you_sure), :method => :delete if has_right(@app) %>
-    <%= link_to "#{@app.top? ? l(:label_unrecommend) : l(:label_recommend)}", {:action => "recommend", :id => @app.id, :project_id => @project}, :confirm => l(:text_are_you_sure), :method => :post if User.current.admin? %>
+    <%= link_to "#{@app.top? ? l(:label_games_unrecommend) : l(:label_games_recommend)}", {:action => "recommend", :id => @app.id, :project_id => @project}, :confirm => l(:text_are_you_sure), :method => :post if User.current.admin? %>
   </div>
   <%= link_to "#{l(:label_index)}", :action => "index", :project_id => @project %>
   &gt;

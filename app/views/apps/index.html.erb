@@ -15,7 +15,7 @@
           <div class="right small">
             <%= link_to "#{l(:label_more)}", {:controller => "apps", :action => "all", :type => "recommend", :project_id => @project} %>
           </div>
-          <%= l(:label_recommend) %>
+          <%= l(:label_games_recommend) %>
         </h2>
         <br />
         <%= render :partial => 'apps/app_list', :locals => {:apps => @recommends, :style_class => "recommend_list"} %>

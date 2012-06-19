@@ -4,13 +4,14 @@
 # 0.1.3 fix screenshot div in diff country store
 # 0.1.4 add "Indea" to country select
 # 0.1.5 add "jiathis" code to app's view
+# 0.1.6 chang 'Recommend' to 'Featured'
 require 'redmine'
 
 Redmine::Plugin.register :redmine_games do
   name 'Redmine Games plugin'
   author 'Riquel Li'
   description 'This is a plugin for Redmine to upload your app games'
-  version '0.1.5'
+  version '0.1.6'
   url 'http://railser.cn'
   author_url 'http://railser.cn/me'
 
