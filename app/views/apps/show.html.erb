@@ -33,7 +33,7 @@
       <%= l(:label_author) %>
       :
       <% if [1, 54].include?(@app.user_id) %>
-        <%= link_to @user.im, @app.website %>
+        <%= link_to @app.im, @app.website %>
       <% else %>
         <%= link_to @user.name, @app.website %>
       <% end %>
