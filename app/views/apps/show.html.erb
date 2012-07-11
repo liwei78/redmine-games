@@ -32,7 +32,11 @@
     <div>
       <%= l(:label_author) %>
       :
-      <%= link_to @user.name, @app.website %>
+      <% if [1, 54].include?(@app.user_id) %>
+        <%= link_to @user.im, @app.website %>
+      <% else %>
+        <%= link_to @user.name, @app.website %>
+      <% end %>
     </div>
     <div>
       <%= l(:label_last_updated) %>
