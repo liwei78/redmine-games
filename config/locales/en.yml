@@ -16,6 +16,7 @@ en:
   label_index: Index
   label_edit: Edit
   label_delete: Delete
+  label_all_games: All Games
   label_games_recommend: Featured
   label_games_unrecommend: un-Featured
   label_description: Description

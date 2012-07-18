@@ -16,8 +16,9 @@ zh:
   label_index: 首页
   label_edit: 编辑
   label_delete: 删除
-  label_recommend: 推荐
-  label_unrecommend: 取消推荐
+  label_all_games: 全部游戏
+  label_games_recommend: 推荐
+  label_games_unrecommend: 取消推荐
   label_description: 描述
   label_screenshots: 截图
   label_author: 作者
