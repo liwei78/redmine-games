@@ -34,7 +34,7 @@ div.form_actions a {}
 
 ul.apps_list {}
 ul.recommend_list {
-  height: 200px !important;
+/*  height: 200px !important;*/
 }
 ul.apps_list li {
   list-style: none;
